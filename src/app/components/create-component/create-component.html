@@ -1,6 +1,9 @@
 <h1>Create Department</h1>
 
-<form  class=" mx-3 my-3" createform="ngForm" action="">
+<form class=" mx-3 my-3" createform="ngForm" action="">
+    
+    <h3>{{mensaje}}</h3>
+
     <label for="">Id Departamento:</label>
     <input name="cajaid" #cajaid class="form-control" type="text">
 
@@ -10,5 +13,6 @@
     <label for="">Localidad:</label>
     <input name="cajalocalidad" #cajalocalidad class="form-control mb-2" type="text">
 
-    <button class="btn btn-warning">New</button>
+    <button class="btn btn-warning" (click)="insertDepartamento()">New</button>
+
 </form>

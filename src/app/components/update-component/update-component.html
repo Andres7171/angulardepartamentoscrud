@@ -1,0 +1,16 @@
+<h1>Edit Department</h1>
+
+<form class=" mx-3 my-3" createform="ngForm" action="">
+
+    <label for="">Id Departamento:</label>
+    <input value="{{departamento.numero}}" disabled name="cajaid" #cajaid class="form-control" type="text">
+
+    <label for="">Nombre:</label>
+    <input value="{{departamento.nombre}}" name="cajanombre" #cajanombre class="form-control" type="text">
+
+    <label for="">Localidad:</label>
+    <input value="{{departamento.localidad}}" name="cajalocalidad" #cajalocalidad class="form-control mb-2" type="text">
+
+    <button class="btn btn-warning" (click)="updateDepartamento()">Edit</button>
+
+</form>

@@ -1,20 +1,39 @@
 <h1>Departamentos Home</h1>
 
 <div class="mx-3 my-3">
-    <table class="table table-hover  table-primary table-striped">
-      <thead class="table-info">
-        <th class="table-info">Numero</th>
-        <th class="table-info">Nombre</th>
-        <th class="table-info">Localidad</th>
-      </thead>
-      <tbody>
-        @for (departamento of departamentos; track $index) {
-          <tr class="table-info">
-            <td class="table-info">{{ departamento.numero }}</td>
-            <td class="table-info">{{ departamento.nombre }}</td>
-            <td class="table-info">{{ departamento.localidad }}</td>
-          </tr>
-        }
-      </tbody>
-    </table>
-  </div>
+  <table class="table table-hover table-primary table-striped">
+    <thead class="table-info">
+      <th class="table-info">Numero</th>
+      <th class="table-info">Nombre</th>
+      <th class="table-info">Localidad</th>
+    </thead>
+    <tbody>
+      @for (departamento of departamentos; track $index) {
+        <tr class="table-info">
+          <td class="table-info">{{ departamento.numero }}</td>
+          <td class="table-info">{{ departamento.nombre }}</td>
+          <td class="table-info">{{ departamento.localidad }}</td>
+          <td>
+            <a class="btn btn-info"
+              [routerLink]="[
+                '/details',departamento.numero,departamento.nombre,departamento.localidad
+              ]"
+              >Details</a
+            >
+          </td>
+          <td>
+            <a class="btn btn-warning"
+              [routerLink]="[
+                '/update',departamento.numero
+              ]"
+              >Edit</a
+            >
+          </td>
+          <td>
+            <button (click)="deleteDepartamento(departamento.numero)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
